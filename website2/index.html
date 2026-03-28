@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Z-Mon | Node Sentinel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glow-wrap"></div>
+    
+    <nav class="sidebar">
+        <div class="logo-area">
+            <span class="logo-z">Z</span>
+            <span>Sentinel</span>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><span class="icon">📊</span> Overview</li>
+            <li><span class="icon">🖥️</span> Nodes</li>
+            <li><span class="icon">⚠️</span> Triggers</li>
+            <li><span class="icon">⚙️</span> Config</li>
+        </ul>
+    </nav>
+    
+    <main class="app-content">
+        <header class="page-header">
+            <div class="title-meta">
+                <h2>Production Node: <span>app-srv-01</span></h2>
+                <div class="node-tags">
+                    <span class="tag ip">10.0.1.42</span>
+                    <span class="tag ansible">managed via Ansible</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-primary">Acknowledge All</button>
+            </div>
+        </header>
+
+        <section class="metric-grid">
+            <div class="card metric-card">
+                <div class="card-head">
+                    <h3>CPU Cluster Usage</h3>
+                    <div class="status-dot success"></div>
+                </div>
+                <div class="card-body">
+                    <div class="gauge-wrap">
+                        <div class="gauge-fill-h" style="height: 62%;"></div>
+                        <div class="gauge-text">
+                            <span class="val">62</span><span class="pct">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-foot">Load Avg: 2.1 / 1.8</div>
+            </div>
+
+            <div class="card metric-card">
+                <div class="card-head">
+                    <h3>Available Memory</h3>
+                    <div class="status-dot warning"></div>
+                </div>
+                <div class="card-body">
+                    <div class="gauge-wrap">
+                        <div class="gauge-fill-h warning" style="height: 86%;"></div>
+                        <div class="gauge-text">
+                            <span class="val">86</span><span class="pct">%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-foot">13.7GB Used / 16GB Total</div>
+            </div>
+
+            <div class="card metric-card">
+                <div class="card-head">
+                    <h3>Root Disk I/O</h3>
+                    <div class="status-dot success"></div>
+                </div>
+                <div class="card-body">
+                    <div class="gauge-wrap disk">
+                        <div class="disk-graph">
+                            <div class="bar" style="height: 20%;"></div>
+                            <div class="bar" style="height: 35%;"></div>
+                            <div class="bar" style="height: 15%;"></div>
+                            <div class="bar" style="height: 25%;"></div>
+                            <div class="bar success" style="height: 10%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-foot">Wait Time: 0.12ms</div>
+            </div>
+        </section>
+
+        <section class="trigger-section card">
+            <h3>Active System Triggers</h3>
+            <table class="trigger-table">
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>Severity</th>
+                        <th>Age</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>app-srv-01</td>
+                        <td><span class="tag sev warning">WARNING</span></td>
+                        <td>12m 4s</td>
+                        <td>Memory usage above 85% for 5 minutes</td>
+                        <td><button class="btn-sm">Ack</button></td>
+                    </tr>
+                    <tr>
+                        <td>web-p01</td>
+                        <td><span class="tag sev critical">CRITICAL</span></td>
+                        <td>1h 32m</td>
+                        <td>Apache Service is down (Port 80)</td>
+                        <td><button class="btn-sm">Restart</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
