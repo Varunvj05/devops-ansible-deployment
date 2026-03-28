@@ -1,0 +1,107 @@
+/* SaaS Design System: Indigo Product */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #a855f7;
+    --bg-light: #ffffff;
+    --bg-dark: #111827;
+    --text-hero: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Poppins', sans-serif; color: var(--text-main); line-height: 1.6; background: #f9fafb; overflow-x: hidden;}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+
+/* Modern SaaS Nav */
+.saas-nav {
+    position: fixed; top: 0; width: 100%; height: 80px;
+    background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo { color: white; font-weight: 800; font-size: 1.5rem; }
+.logo span { color: var(--secondary); }
+
+.saas-nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.saas-nav li { color: #d1d5db; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.saas-nav li:hover { color: white; }
+
+.btn-sass-sm { background: var(--primary); color: white; text-decoration: none; padding: 8px 18px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; }
+
+/* Hero Section with Gradients */
+.hero-sass {
+    height: 100vh;
+    background: radial-gradient(circle at 10% 20%, #111827 0%, #1e1b4b 100%);
+    color: var(--text-hero);
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative;
+    padding-top: 80px; /* nav offset */
+}
+
+.hero-sass .glow {
+    position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(17,24,39,0) 70%);
+    top: -100px; right: -100px; filter: blur(100px);
+}
+
+.hero-sass h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin: 0 0 25px 0; }
+.hero-sass h1 span {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.hero-sass p { font-size: 1.25rem; color: #d1d5db; max-width: 700px; margin-bottom: 40px; }
+
+.hero-actions { display: flex; gap: 20px; }
+.btn-sass-lg { background: var(--primary); color: white; text-decoration: none; padding: 15px 35px; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
+.btn-sass-lg:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.btn-sass-outline { background: transparent; border: 2px solid rgba(255,255,255,0.1); color: white; padding: 15px 35px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+
+/* Architecture Section */
+.diag-section { padding: 100px 0; background: white; color: var(--text-main); }
+.section-head { text-align: center; max-width: 600px; margin: 0 auto 80px auto; }
+.section-head h2 { font-weight: 800; font-size: 2.2rem; }
+.section-head p { color: var(--text-muted); }
+
+/* Premium Diagram CSS */
+.diagram-wrapper { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px; position: relative; }
+
+.diag-card {
+    background: white; padding: 25px; border-radius: 12px; width: 220px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9; text-align: center;
+    transition: all 0.3s ease;
+}
+.diag-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-premium); }
+
+.diag-card .icon { font-size: 2rem; margin-bottom: 15px; }
+.diag-card h4 { margin: 0; font-weight: 700; }
+.diag-card .role { color: var(--primary); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; display: block; }
+.diag-card p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+.diag-card.prod { border: 2px solid var(--secondary); }
+.diag-card.prod .role { color: var(--secondary); }
+.diag-card.prod .icon { color: white; background: var(--secondary); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px auto; }
+
+.data-flow { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; padding: 5px 10px; background: #f1f5f9; border-radius: 20px;}
+
+.connection-layer { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 40px; }
+.data-flow.monitor { margin-bottom: 15px; background: #d1fae5; color: #065f46; }
+.diag-card.zabbix { width: 400px; border: 1px solid #10b981; }
+.diag-card.zabbix .role { color: #10b981; }
+
+/* Showcase Section */
+.tools-showcase { padding: 100px 0; background: #f9fafb; }
+.tools-showcase h2 { text-align: center; margin-bottom: 50px; font-weight: 800; }
+.tools-grid { display: flex; gap: 20px; }
+.tool-card { flex: 1; padding: 30px; background: white; border-radius: 12px; border: 1px solid #f1f5f9; }
+.tool-card:hover { transform: scale(1.02); }
+
+@media (max-width: 1024px) {
+    .diagram-wrapper { flex-direction: column; }
+    .diag-card.zabbix { width: 220px; }
+}

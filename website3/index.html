@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps | Automation Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="saas-nav">
+        <div class="logo">Nexus<span>Ops</span></div>
+        <nav>
+            <ul>
+                <li>Solution</li>
+                <li>Tools</li>
+                <li>API</li>
+            </ul>
+        </nav>
+        <a href="#architecture" class="btn-sass-sm">View Diagram</a>
+    </header>
+
+    <section class="hero-sass">
+        <div class="glow"></div>
+        <div class="container">
+            <h1>Scalable Infrastructure, <span>Automated</span>.</h1>
+            <p>Demonstrating full lifecycle DevOps integration. From code commit to production monitoring, handled by Jenkins, Ansible, and Zabbix Sentinel.</p>
+            <div class="hero-actions">
+                <a href="#architecture" class="btn-sass-lg">Platform Architecture</a>
+                <button class="btn-sass-outline">View Jenkins Pipeline</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="diag-section">
+        <div class="container">
+            <header class="section-head">
+                <h2>System Architecture Diagram</h2>
+                <p>A visual breakdown of our continuous deployment and active monitoring ecosystem.</p>
+            </header>
+
+            <div class="diagram-wrapper">
+                <div class="diag-card core" id="box-jenkins">
+                    <div class="icon">🤖</div>
+                    <h4>Jenkins</h4>
+                    <span class="role">CI/CD Orchestration</span>
+                    <p>Triggers on commit, builds artifact.</p>
+                </div>
+                
+                <div class="data-flow arrow-right">Artifact & Trigger</div>
+
+                <div class="diag-card core" id="box-ansible">
+                    <div class="icon">📦</div>
+                    <h4>Ansible</h4>
+                    <span class="role">Configuration Mgmt</span>
+                    <p>Idempotent state management.</p>
+                </div>
+
+                <div class="data-flow arrow-right">Configure Port</div>
+
+                <div class="diag-card prod" id="box-web">
+                    <div class="icon">N</div>
+                    <h4>Nginx</h4>
+                    <span class="role">Production Node</span>
+                    <p>Static App hosted on custom port.</p>
+                </div>
+
+                <div class="connection-layer">
+                    <div class="data-flow arrow-up monitor">Monitor Stats</div>
+                    <div class="diag-card zabbix" id="box-zabbix">
+                        <div class="icon">Z</div>
+                        <h4>Zabbix Sentinel</h4>
+                        <span class="role">Monitoring</span>
+                        <p>Hosts, CPU, Memory, Disk triggers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tools-showcase">
+        <div class="container">
+            <h2>The Technology Stack</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Pipeline</h3>
+                    <p>Continuous Integration handled via Jenkins Pipeline DSL.</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Deployment</h3>
+                    <p>Ansible Playbooks handle Nginx config and file deployment.</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Alerting</h3>
+                    <p>Zabbix Sentinel detects downtime & resource spikes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
