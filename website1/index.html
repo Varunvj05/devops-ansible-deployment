@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusDeploy | Pro Pipeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="app-wrapper">
+        <header class="main-header">
+            <div class="logo-area">
+                <div class="logo-icon">N</div>
+                <h1>Nexus<span>Deploy</span></h1>
+            </div>
+            <div class="header-meta">
+                <div class="status-indicator">
+                    <span class="pulse success"></span>
+                    Master Branch: IDLE
+                </div>
+            </div>
+        </header>
+
+        <main class="pipeline-container">
+            <div class="stage-card active" id="stage-build">
+                <div class="stage-header">
+                    <div class="icon">🏗️</div>
+                    <span class="stage-num">01</span>
+                </div>
+                <h3>Source & Build</h3>
+                <p>Compiling assets and dependencies...</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-build"></div>
+                </div>
+                <div class="stage-footer">
+                    <div class="status-badge success" id="status-build">DEPLOYED</div>
+                </div>
+            </div>
+
+            <div class="connector-line"></div>
+
+            <div class="stage-card running" id="stage-test">
+                <div class="stage-header">
+                    <div class="icon">🧪</div>
+                    <span class="stage-num">02</span>
+                </div>
+                <h3>Unit Testing</h3>
+                <p>Executing automated test suites...</p>
+                <div class="progress-container">
+                    <div class="progress-bar running" id="progress-test"></div>
+                </div>
+                <div class="stage-footer">
+                    <div class="status-badge progress" id="status-test">RUNNING</div>
+                </div>
+            </div>
+
+            <div class="connector-line"></div>
+
+            <div class="stage-card" id="stage-deploy">
+                <div class="stage-header">
+                    <div class="icon">🚀</div>
+                    <span class="stage-num">03</span>
+                </div>
+                <h3>Production</h3>
+                <p>Syncing to Nginx via Ansible...</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-deploy"></div>
+                </div>
+                <div class="stage-footer">
+                    <div class="status-badge pending">PENDING</div>
+                </div>
+            </div>
+        </main>
+
+        <section class="controls">
+            <button onclick="resetPipeline()" class="btn-sass btn-outline">
+                <span class="icon">🔄</span> Rerun
+            </button>
+            <button onclick="simulateFailure()" class="btn-sass btn-danger">
+                <span class="icon">💥</span> Simulate Failure
+            </button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
